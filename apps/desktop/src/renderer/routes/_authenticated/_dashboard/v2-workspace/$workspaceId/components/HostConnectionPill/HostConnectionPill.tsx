@@ -7,13 +7,13 @@ import { useWorkspaceHostUrl } from "@superset/workspace-client";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useKnownHosts } from "renderer/hooks/known-hosts/useKnownHosts";
+import { useWakeBox } from "renderer/hooks/useWakeBox"; // Paradev Boxes fork
 import { useLocalHostService } from "renderer/routes/_authenticated/providers/LocalHostServiceProvider";
 import { useSandboxAccess } from "renderer/routes/_authenticated/providers/SandboxAccessProvider";
 import { useHostReachability } from "../../../hooks/useHostReachability";
 import { useWorkspace } from "../../../providers/WorkspaceProvider";
 import { LOCAL_HOST_SERVICE_DETAIL } from "../../../providers/WorkspaceProvider/utils/localHostServiceDetail";
 import { useChatSessionChecksFailing } from "../../hooks/usePaneRegistry/components/ChatPane/components/AcpChatPane/hooks/useChatSessionLiveness";
-import { useWakeBox } from "./hooks/useWakeBox";
 
 const WAKE_UP_ESTIMATE_SECONDS = 30;
 
@@ -59,6 +59,7 @@ export function HostConnectionPill() {
 			(workspace.hostId === machineId
 				? t({ message: "This device" })
 				: t({ message: "Unknown host" })));
+	// Paradev Boxes fork: an unreachable box host offers Wake.
 	const wakeBox = useWakeBox(
 		workspace.organizationId,
 		workspace.hostId,
@@ -109,7 +110,7 @@ export function HostConnectionPill() {
 							: t({ message: "Connecting…" });
 
 	if (usageRefusal?.workspaceId === workspace.hostId) return null;
-	if (!isDegraded && !isAccessDenied && !isCheckFailing) return wakeBox.dialog;
+	if (!isDegraded && !isAccessDenied && !isCheckFailing) return null;
 
 	return (
 		<div className="pointer-events-none absolute inset-x-0 top-32 z-20 flex justify-center px-4">
@@ -152,6 +153,7 @@ export function HostConnectionPill() {
 								{t({ message: "Host settings" })}
 							</Link>
 						) : null}
+						{/* Paradev Boxes fork */}
 						{isDegraded && !isAccessDenied ? wakeBox.button : null}
 						<button
 							type="button"
@@ -166,7 +168,6 @@ export function HostConnectionPill() {
 					{detail}
 				</TooltipContent>
 			</Tooltip>
-			{wakeBox.dialog}
 		</div>
 	);
 }
