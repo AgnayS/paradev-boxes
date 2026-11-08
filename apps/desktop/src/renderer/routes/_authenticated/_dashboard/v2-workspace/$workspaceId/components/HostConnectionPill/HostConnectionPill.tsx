@@ -13,6 +13,7 @@ import { useHostReachability } from "../../../hooks/useHostReachability";
 import { useWorkspace } from "../../../providers/WorkspaceProvider";
 import { LOCAL_HOST_SERVICE_DETAIL } from "../../../providers/WorkspaceProvider/utils/localHostServiceDetail";
 import { useChatSessionChecksFailing } from "../../hooks/usePaneRegistry/components/ChatPane/components/AcpChatPane/hooks/useChatSessionLiveness";
+import { useWakeBox } from "./hooks/useWakeBox";
 
 const WAKE_UP_ESTIMATE_SECONDS = 30;
 
@@ -58,6 +59,11 @@ export function HostConnectionPill() {
 			(workspace.hostId === machineId
 				? t({ message: "This device" })
 				: t({ message: "Unknown host" })));
+	const wakeBox = useWakeBox(
+		workspace.organizationId,
+		workspace.hostId,
+		hostName,
+	);
 	const detail = isLocalRestartInFlight
 		? i18n._(LOCAL_HOST_SERVICE_DETAIL.starting)
 		: isSandbox && !isAccessDenied
@@ -103,7 +109,7 @@ export function HostConnectionPill() {
 							: t({ message: "Connecting…" });
 
 	if (usageRefusal?.workspaceId === workspace.hostId) return null;
-	if (!isDegraded && !isAccessDenied && !isCheckFailing) return null;
+	if (!isDegraded && !isAccessDenied && !isCheckFailing) return wakeBox.dialog;
 
 	return (
 		<div className="pointer-events-none absolute inset-x-0 top-32 z-20 flex justify-center px-4">
@@ -146,6 +152,7 @@ export function HostConnectionPill() {
 								{t({ message: "Host settings" })}
 							</Link>
 						) : null}
+						{isDegraded && !isAccessDenied ? wakeBox.button : null}
 						<button
 							type="button"
 							onClick={isCheckFailing ? retryChecks : onRetry}
@@ -159,6 +166,7 @@ export function HostConnectionPill() {
 					{detail}
 				</TooltipContent>
 			</Tooltip>
+			{wakeBox.dialog}
 		</div>
 	);
 }

@@ -951,6 +951,9 @@ msgstr "{count} seçildi"
 msgid "{count}/day"
 msgstr "{count}/gün"
 
+msgid "{cpu} vCPU / {memory} GB"
+msgstr "{cpu} vCPU / {memory} GB"
+
 msgid "{credit} of credit goes toward your next invoices."
 msgstr "{credit} kredi sonraki faturalarınızdan düşülür."
 
@@ -2745,6 +2748,9 @@ msgstr "başka bir cihaz"
 msgid "Answer any questions in the terminal below, such as a password."
 msgstr "Aşağıdaki terminalde parola gibi soruları yanıtla."
 
+msgid "Answer any questions in the terminal below, such as an API key."
+msgstr "Aşağıdaki terminalde API anahtarı gibi soruları yanıtla."
+
 msgid "Answer this question on desktop, or skip it."
 msgstr "Bu soruyu masaüstünde yanıtlayın veya atlayın."
 
@@ -3572,6 +3578,10 @@ msgstr "Dock simgesini zıplat"
 
 msgid "Box"
 msgstr "Kutu"
+
+msgctxt "sandbox host"
+msgid "Box"
+msgstr "Sandbox"
 
 msgid "Branch"
 msgstr "Dal"
@@ -6263,6 +6273,9 @@ msgstr "Oluştur"
 msgid "Create \"{newLabel}\""
 msgstr "\"{newLabel}\" oluştur"
 
+msgid "Create a box"
+msgstr "Sandbox oluştur"
+
 msgid "Create a channel"
 msgstr "Kanal oluştur"
 
@@ -6817,6 +6830,9 @@ msgstr "Yine de sil"
 msgid "Delete anyway will skip the teardown script entirely."
 msgstr "Yine de sil, kapatma betiğini tamamen atlar."
 
+msgid "Delete box"
+msgstr "Sandbox'ı sil"
+
 #. placeholder {0}: index + 1
 msgid "Delete command {0}"
 msgstr "{0} numaralı komutu sil"
@@ -6970,6 +6986,9 @@ msgstr "Silinmiş kullanıcı"
 
 msgid "Deleted workspaces, but couldn’t finish updating the sidebar"
 msgstr "Çalışma alanları silindi, ancak kenar çubuğu güncellenemedi"
+
+msgid "Deletes its sandbox at {provider} with everything on the disk, and removes this host and its workspaces. This can’t be undone."
+msgstr "{provider} üzerindeki sandbox'ı diskteki her şeyle birlikte siler, bu host'u ve çalışma alanlarını kaldırır. Bu işlem geri alınamaz."
 
 #. placeholder {0}: account?.sourceLabel
 msgid "Deletes the {0} profile and its saved sign-in on this machine. The account itself is unaffected."
@@ -7294,6 +7313,9 @@ msgstr "Discord ve GitHub"
 
 msgid "Discover and connect to development servers on your network."
 msgstr "Ağınızdaki geliştirme sunucularını bulun ve bağlanın."
+
+msgid "Disk (GiB)"
+msgstr "Disk (GiB)"
 
 msgid "Disk version"
 msgstr "Diskteki sürüm"
@@ -9936,6 +9958,9 @@ msgstr "Boşta"
 
 msgid "Idle · branch pushed"
 msgstr "Boşta · dal push edildi"
+
+msgid "Idle minutes before it stops"
+msgstr "Durmadan önce boşta kalma süresi (dk)"
 
 msgid "If you're enjoying Paradev so far, a GitHub star helps other developers discover it."
 msgstr "Paradev'den şimdiye kadar memnunsanız, bir GitHub yıldızı diğer geliştiricilerin onu keşfetmesine yardımcı olur."
@@ -15286,6 +15311,9 @@ msgstr "Özellikler"
 msgid "Provide either id or slug"
 msgstr "id veya slug değerlerinden birini sağlayın"
 
+msgid "Provider"
+msgstr "Sağlayıcı"
+
 #. placeholder {0}: sourceConfig?.label ?? binding.agentId
 msgid "Provider: {0}"
 msgstr "Sağlayıcı: {0}"
@@ -16896,6 +16924,9 @@ msgstr "Çalışan terminal süreçleri devam eder, ancak uygulama yeniden başl
 msgid "Runs a local command on your machine"
 msgstr "Makinenizde yerel bir komut çalıştırır"
 
+msgid "Runs a Paradev host on a sandbox at Daytona, E2B or Blaxel, billed to your own account there. It shows up here like any other host."
+msgstr "Daytona, E2B veya Blaxel'de bir sandbox üzerinde Paradev host'u çalıştırır; ücreti oradaki kendi hesabına yansır. Burada diğer host'lar gibi görünür."
+
 msgid "Runs appear here once an automation fires."
 msgstr "Bir otomasyon tetiklendiğinde çalıştırmalar burada görünür."
 
@@ -16907,6 +16938,9 @@ msgstr "O cihazdaki Paradev uygulamasının içinde çalışır; bu yüzden gün
 
 msgid "Runs land in a workspace. Review the diff, merge what's good."
 msgstr "Çalıştırmalar bir çalışma alanına düşer. Farkı inceleyin, iyi olanı birleştirin."
+
+msgid "Runs on a sandbox at {provider}, billed to your account there."
+msgstr "{provider} üzerinde bir sandbox'ta çalışır; ücreti oradaki hesabına yansır."
 
 msgid "Runs that found no host online"
 msgstr "Çevrimiçi ana makine bulamayan çalıştırmalar"
@@ -17695,6 +17729,9 @@ msgstr "Grup rengini ayarla"
 #. placeholder {0}: i18n._(glyph.label)
 msgid "Set icon to {0}"
 msgstr "Simgeyi şuna ayarla: {0}"
+
+msgid "Set idle minutes to 0 to keep it running. The first time you use {providerLabel}, the terminal asks for its API key."
+msgstr "Çalışmaya devam etmesi için boşta kalma süresini 0 yap. {providerLabel} ilk kez kullanıldığında terminal API anahtarını sorar."
 
 msgid "Set project…"
 msgstr "Projeyi ayarla…"
@@ -18755,6 +18792,9 @@ msgstr "{date} tarihinde başlıyor"
 msgid "Starts a fresh session in this workspace"
 msgstr "Bu çalışma alanında yeni bir oturum başlatır"
 
+msgid "Starts its sandbox at {provider} and the Paradev host on it. This can take a minute."
+msgstr "{provider} üzerindeki sandbox'ı ve içindeki Paradev host'unu başlatır. Bu bir dakika sürebilir."
+
 msgid "State"
 msgstr "Durum"
 
@@ -18815,6 +18855,9 @@ msgstr "Durdur"
 msgid "Stop {0}"
 msgstr "Durdur: {0}"
 
+msgid "Stop {hostName}"
+msgstr "Durdur: {hostName}"
+
 msgid "Stop {label}"
 msgstr "{label} öğesini durdur"
 
@@ -18860,6 +18903,9 @@ msgstr "Kullanım sınırı nedeniyle durduruldu"
 
 msgid "Stopping the agent in {what}"
 msgstr "{what} içindeki ajan durduruluyor"
+
+msgid "Stops its sandbox at {provider}. The disk stays, and waking the box starts it again."
+msgstr "{provider} üzerindeki sandbox'ı durdurur. Disk korunur; uyandırınca sandbox yeniden başlar."
 
 msgid "Stops the agent and sends this now"
 msgstr "Ajanı durdurur ve bunu hemen gönderir"
@@ -19546,6 +19592,15 @@ msgstr "Otomasyonun sahibi artık bu kuruluşta bulut çalışma alanlarını ku
 msgid "The best agent will change.<0/>Your workflow shouldn't."
 msgstr "En iyi ajan değişecek.<0/>İş akışınız değişmemeli."
 
+msgid "The box is online."
+msgstr "Sandbox çevrimiçi."
+
+msgid "The box is online. Pick it when you create a workspace."
+msgstr "Sandbox çevrimiçi. Bir çalışma alanı oluştururken onu seç."
+
+msgid "The box is stopped."
+msgstr "Sandbox durduruldu."
+
 msgid "The button now stands out. I checked it in your pane."
 msgstr "Düğme artık öne çıkıyor. Bölmenizde kontrol ettim."
 
@@ -19560,6 +19615,9 @@ msgstr "Bulut çalışma alanının başlamış olması gerekiyordu ancak zaman�
 
 msgid "The code expired. Start again."
 msgstr "Kodun süresi doldu. Yeniden başlayın."
+
+msgid "The command stopped. The reason is in the output below."
+msgstr "Komut durdu. Nedeni aşağıdaki çıktıda."
 
 msgid "The commands Paradev runs to set up, run and archive this project's workspaces, from the repository's config.toml."
 msgstr "Paradev'in bu projenin çalışma alanlarını hazırlamak, çalıştırmak ve arşivlemek için çalıştırdığı komutlar (deponun config.toml dosyası)."
@@ -21547,6 +21605,15 @@ msgstr "Alt ajanın ilk mesajı bekleniyor…"
 
 msgid "Waiting for your input"
 msgstr "Girdinizi bekliyor"
+
+msgid "Wake"
+msgstr "Uyandır"
+
+msgid "Wake {hostName}"
+msgstr "Uyandır: {hostName}"
+
+msgid "Wake box"
+msgstr "Sandbox'ı uyandır"
 
 msgid "Waking up workspace"
 msgstr "Çalışma alanı uyandırılıyor"
